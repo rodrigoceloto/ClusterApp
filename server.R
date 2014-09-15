@@ -9,16 +9,18 @@ data<-read.csv("pca_data.csv")
 
 shinyServer(function(input, output, session) {
     
-    # Combine the selected variables into a new data frame
+    # New data frame of selected PCs
     selectedData <- reactive({
         data[, c(input$xcol, input$ycol)]
     }) 
 
+    #Calculate cluster by chosen number of clusters
     clusters <- reactive({
         set.seed(input$seed)
         kmeans(selectedData(), input$clusters)
     })
     
+    #Render Plot
     output$plot1 <- renderPlot({
         Legend<- switch(input$color,
                        "Cluster"=clusters()$cluster,
