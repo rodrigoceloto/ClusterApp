@@ -24,7 +24,7 @@ shinyUI(pageWithSidebar(
         p("This app plots the principal componentes calculated from a dataset of Exercise performance."),
         p("You can choose which Principal Components you want to place in x-axis and y-axis."),
          p("You can also choose the color of plot points from three options: (a) Estimated cluster, (b) Classe variable and (c) User Name variable."),
-        p("Is also optional the number of clusters calculated. Once cluster estimative is sensitive to the seed, you can change the seed to recalculate it."),
+        p("Is also optional the number of clusters calculated by k-means. Once cluster estimative is sensitive to the seed, you can change the seed to recalculate it."),
           p("The intent of this plot is to make an exploratory analysis to inspect visually if there is any unsupervised pattern in data that could be associated with the variable Classe."),
         p("As you can check using this app, the clusters are associated with the User Name variable but they are not related with the 'classe' variable."),
 
